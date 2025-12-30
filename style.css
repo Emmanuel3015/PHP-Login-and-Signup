@@ -1,0 +1,180 @@
+/* ========== Basic page setup ========== */
+:root {
+  --purple: #7b2cff; /* main purple color */
+  --purple-dark: #5b19d6;
+  --card-width: 900px;
+  --card-height: 420px;
+  --radius: 6px;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--purple);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
+
+/* Container that holds the card centered */
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  display: flex;
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+/* Left side (form) */
+.left {
+  width: 45%;
+  padding: 42px 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+  position: relative;
+  display: inline-block;
+}
+/* little underline accent under the title */
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 32px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-dark));
+  border-radius: 2px;
+}
+
+/* Form */
+form {
+  margin-top: 14px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 2px solid #eee;
+}
+.field .icon {
+  font-size: 18px;
+  color: var(--purple);
+  width: 28px;
+  text-align: center;
+}
+input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #444;
+  background: transparent;
+}
+input::placeholder {
+  color: #888;
+}
+
+/* .forgot {
+  margin-top: 10px;
+  color: var(--purple);
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+} */
+
+/* Login button */
+.btn {
+  margin-top: 18px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-dark));
+  color: white;
+  border: 0;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(123, 44, 255, 0.28);
+}
+
+.bottom-text {
+  margin-top: 18px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+.bottom-text a {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* Right side (image + overlay + text) */
+.right {
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+}
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+}
+/* purple overlay with lowered opacity */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(123, 44, 255, 0.78),
+    rgba(91, 25, 214, 0.78)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.overlay h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.overlay p {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
